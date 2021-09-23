@@ -13,7 +13,7 @@ const ToDoCreateCard = (props) => {
     const submitAddToDo = (event) => {
         event.preventDefault()
         
-        if ( task === "" ){
+        if ( task.trim() === "" ){
             setError(true)
         } else {
             props.addTask(task)
