@@ -1,4 +1,4 @@
-import './ToDoCreateCard.css'
+import style from './ToDoCreateCard.module.css'
 import { useState } from 'react'
 
 const ToDoCreateCard = (props) => {
@@ -22,11 +22,11 @@ const ToDoCreateCard = (props) => {
     }
 
     return (
-        <div className="card">
+        <div className={style.card}>
             <form onSubmit={submitAddToDo}>
-                {error === true && <p className="error">Input can not be empty</p>}
-                <input type="text" onChange={taskChangeHandler} value={task} className="input" />
-                <button className="button"> Add ToDo </button>
+                {error === true && <p className={style.error}>Input can not be empty</p>}
+                <input type="text" onChange={taskChangeHandler} value={task} className={style.input} />
+                <button className={style.button}> Add ToDo </button>
             </form>
         </div> 
     )
