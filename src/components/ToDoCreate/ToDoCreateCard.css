@@ -1,0 +1,29 @@
+.card {
+  padding: 2%;
+  background-color: rgb(114, 236, 83);
+  margin: 3% auto;
+  width: 29%;
+  max-width: 47%;
+  border-radius: 1rem;
+}
+
+.input {
+  width: 79%;
+  padding: 12px 20px;
+  margin: 3%;
+  box-sizing: border-box;
+  border-radius: 1rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 20px;
+  margin: 3%;
+  box-sizing: border-box;
+  border-radius: 1rem;
+}
+
+.error {
+    margin: 2%;
+    color: red;
+}

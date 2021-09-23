@@ -1,24 +1,32 @@
+import './ToDoCreateCard.css'
 import { useState } from 'react'
 
 const ToDoCreateCard = (props) => {
     const [task, setTask] = useState("")
+    const [error, setError] = useState(false)
 
     const taskChangeHandler = (event) => {
         setTask(event.target.value)
+        setError(false)
     }
 
     const submitAddToDo = (event) => {
         event.preventDefault()
-
-        props.addTask(task)
-        setTask("")
+        
+        if ( task === "" ){
+            setError(true)
+        } else {
+            props.addTask(task)
+            setTask("")
+        }
     }
 
     return (
-        <div>
+        <div className="card">
             <form onSubmit={submitAddToDo}>
-                <input type="text" onChange={taskChangeHandler} value={task} />
-                <button> Add ToDo </button>
+                {error === true && <p className="error">Input can not be empty</p>}
+                <input type="text" onChange={taskChangeHandler} value={task} className="input" />
+                <button className="button"> Add ToDo </button>
             </form>
         </div> 
     )
