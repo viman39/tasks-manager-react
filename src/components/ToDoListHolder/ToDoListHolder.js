@@ -11,9 +11,11 @@ const ToDoListHolder = (props) => {
 
         const filteredTasks = tasks.filter( task => { return task.done === false } )
 
-        const tasksDisplay = filteredTasks.map(task => <div id={task.id} key={task.id} onClick={markAsFinished}>
-            {task.name} X
-        </div>)
+        const tasksDisplay = filteredTasks.map(task =>
+            <div id={task.id} key={task.id} onClick={markAsFinished}>
+                {task.name} X
+            </div>
+        )
 
         return <div>
             {tasksDisplay}
