@@ -9,9 +9,11 @@
 
 .task {
   list-style: none;
+  cursor: pointer;
 }
 
 .task.task-done {
   color: rgb(114, 236, 83);
   text-decoration: line-through;
+  cursor: default;
 }
