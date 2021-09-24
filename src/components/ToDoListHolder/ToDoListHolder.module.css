@@ -1,0 +1,17 @@
+.card {
+  padding: 2%;
+  background-color: rgba(247, 86, 239, 0.548);
+  margin: 3% auto;
+  width: 37%;
+  max-width: 47%;
+  border-radius: 1rem;
+}
+
+.task {
+  list-style: none;
+}
+
+.task.task-done {
+  color: rgb(114, 236, 83);
+  text-decoration: line-through;
+}
