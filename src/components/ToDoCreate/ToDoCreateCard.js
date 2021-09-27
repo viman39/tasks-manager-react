@@ -1,35 +1,28 @@
 import style from './ToDoCreateCard.module.css'
-import { useState } from 'react'
+import { useRef } from 'react'
+import Card from '../UI/Card'
 
 const ToDoCreateCard = (props) => {
-    const [task, setTask] = useState("")
-    const [error, setError] = useState(false)
-
-    const taskChangeHandler = (event) => {
-        setTask(event.target.value)
-        setError(false)
-    }
+    const taskInputRef = useRef()
 
     const submitAddToDo = (event) => {
         event.preventDefault()
-        
-        if ( task.trim() === "" ){
-            setError(true)
-        } else {
-            props.addTask(task)
-            setTask("")
-        }
+
+        const task = taskInputRef.current.value;
+
+        props.addTask(task)     
+
+        taskInputRef.current.value = ''
     }
 
     return (
-        <div className={style.card}>
-            <form onSubmit={submitAddToDo}>
-                {error === true && <p className={style.error}>Input can not be empty</p>}
-                <input type="text" onChange={taskChangeHandler} value={task} className={style.input} />
-                <button className={style.button}> Add ToDo </button>
-            </form>
-        </div> 
-    )
+      <Card cardBackground={`card-green`}>
+        <form onSubmit={submitAddToDo}>
+          <input type="text" className={style.input} ref={taskInputRef} />
+          <button className={style.button}> Add ToDo </button>
+        </form>
+      </Card>
+    );
 }
 
 export default ToDoCreateCard

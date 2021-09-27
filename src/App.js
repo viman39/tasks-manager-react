@@ -4,6 +4,7 @@ import ToDoCreateCard from './components/ToDoCreate/ToDoCreateCard.js'
 import ToDoListHolder from './components/ToDoListHolder/ToDoListHolder.js'
 
 function App() {
+  console.log("app")
   const [toDoItems, setToDoItems] = useState([])
 
   const addTask = (task) => {

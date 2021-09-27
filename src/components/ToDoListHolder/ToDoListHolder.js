@@ -1,10 +1,11 @@
+import Card from '../UI/Card';
 import styles from './ToDoListHolder.module.css'
 
 const ToDoListHolder = (props) => {
     const tasks = props.tasks
 
     if ( tasks.length === 0 ){
-        return <div className={styles.card}>No tasks yet!</div>;
+        return <Card>No tasks yet!</Card>;
     } else {
         const markAsFinished = (event) => {
           props.markAsFinished(event.target.id);
@@ -24,9 +25,9 @@ const ToDoListHolder = (props) => {
         ));
 
         return (
-          <div className={styles.card}>
+          <Card cardBackground={`card-pink`}>
             <ul>{tasksDisplay}</ul>
-          </div>
+          </Card>
         );
     }
 }

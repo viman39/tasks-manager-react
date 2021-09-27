@@ -1,0 +1,23 @@
+.card {
+  padding: 2%;
+  background-color: rgb(87, 87, 87);
+  margin: 3% auto;
+  width: 29%;
+  max-width: 47%;
+  border-radius: 1rem;
+}
+
+.card.card-green {
+  background-color: rgb(114, 236, 83);
+}
+
+.card.card-pink {
+  background-color: rgba(247, 86, 239, 0.548);
+  max-width: 71%;
+}
+
+.card input:focus {
+  outline: none;
+  background: #fad0ec;
+  border-color: #8b005d;
+}
