@@ -1,6 +1,7 @@
 .card {
   padding: 2%;
-  background-color: rgb(87, 87, 87);
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   margin: 3% auto;
   width: 29%;
   max-width: 47%;
