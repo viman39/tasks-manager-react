@@ -9,14 +9,11 @@ const ModuleBackdrop = props => {
 
 const ModuleBody = props => {
     return (
-      <div className={styles.card}>
-        <header className={styles.header}>
-          <h2>{props.title}</h2>
-        </header>
+      <div className={styles.modal}>
         <div className={styles.content}>
-          <p>{props.message}</p>
+          <p>{props.error}</p>
         </div>
-        <footer className={styles.actions}>
+        <footer>
           <Button onClick={props.onDismiss}>Okay</Button>
         </footer>
       </div>
@@ -24,16 +21,15 @@ const ModuleBody = props => {
 }
 
 const Module = props => {
+  const modalOverla = document.getElementById("overlays");
+
     return (
       <Fragment>
         {ReactDOM.createPortal(
           <ModuleBackdrop onDismiss={props.onDismiss} />,
-          document.getElementById("backdrop-root")
+          modalOverla
         )}
-        {ReactDOM.createPortal(
-          <ModuleBody {...props} />,
-          document.getElementById("overlay-root")
-        )}
+        {ReactDOM.createPortal(<ModuleBody {...props} />, modalOverla)}
       </Fragment>
     );
 }

@@ -13,7 +13,7 @@ const ToDoCreateCard = (props) => {
         const task = taskInputRef.current.value.trim();
 
         if ( task.length === 0 ){
-          setError(true)
+          setError("Nothing entered!")
           return;
         }
 
@@ -28,7 +28,7 @@ const ToDoCreateCard = (props) => {
 
     return (
       <Fragment>
-        {error && <Modal onDismiss={onDismiss}></Modal>}
+        {error && <Modal onDismiss={onDismiss} error={error}></Modal>}
         <Card cardBackground={`card-green`}>
           <form onSubmit={submitAddToDo}>
             <input type="text" className={style.input} ref={taskInputRef} />
